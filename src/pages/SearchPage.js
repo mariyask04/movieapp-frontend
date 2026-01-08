@@ -31,7 +31,6 @@ const SearchPage = () => {
 
     useEffect(() => {
         fetchMovies();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [page]);
 
     const handleSearch = () => {
@@ -42,10 +41,10 @@ const SearchPage = () => {
     return (
         <Container>
             <Typography variant="h4" sx={{ mt: 2, mb: 2 }}>Search & Sort Movies</Typography>
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={2} sx={{ mb: 3 }}>
+            <Stack direction={{ xs: "column", sm: "row" }} spacing={2} sx={{ mb: 3 }} >
                 <TextField label="Search" value={query} onChange={(e) => setQuery(e.target.value)} fullWidth />
-                <TextField select label="Sort by" value={sort} onChange={(e) => setSort(e.target.value)}>
-                    {sortOptions.map((option) => <MenuItem key={option.value} value={option.value}>{option.label}</MenuItem>)}
+                <TextField select label="Sort by" value={sort} onChange={(e) => setSort(e.target.value)} sx={{ minWidth: 150 }} >
+                    {sortOptions.map((option) => <MenuItem key={option.value} value={option.value} >{option.label}</MenuItem>)}
                 </TextField>
                 <Button variant="contained" onClick={handleSearch}>Search</Button>
             </Stack>
