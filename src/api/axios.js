@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://13.49.41.127:5000/api",
+  baseURL: "https://people-part-auditor-mixing.trycloudflare.com/api",
 });
 
 API.interceptors.request.use((config) => {
